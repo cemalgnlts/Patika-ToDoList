@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*:focus-visible {
+    outline: none !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: cadetblue;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    flex: 1;
+    margin: 20px auto 0 auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #FFF;
+    padding: 10px;
+}
+
+.input-wrapper {
+    align-self: center;
+    width: 100%;
+    margin: 20px 10px 0 10px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    border: none;
+    border-bottom: solid 3px #AAA;
+    padding: 3px 0;
+    font-size: large;
+}
+
+.input-wrapper input:focus {
+    border-color: cornflowerblue;
+}
+
+.input-wrapper input:focus + .info {
+    opacity: 1;
+}
+
+.info {
+    transition: opacity 150ms ease-out;
+    margin-top: 6px;
+    font-size: small;
+    color: #AAA;
+    opacity: 0;
+}
+
+ul {
+    list-style: none;
+    overflow: auto;
+}
+
+ul li {
+    position: relative;
+    transition: padding 200ms ease-out;
+    font-size: medium;
+    padding: 15px;
+}
+
+ul li:not(:last-child) {
+    border-bottom: solid 1px #ddd;
+}
+
+ul li:hover {
+    background: #EEE;
+}
+
+li label {
+    padding-left: 24px;
+    word-wrap: break-word;
+    display: block;
+    cursor: pointer;
+    line-height: 1.2;
+    word-spacing: 2px;
+}
+
+.checkmark {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+li input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.checkmark {
+    border-radius: 50%;
+    border: solid 3px #aaa;
+    width: 24px;
+    height: 24px;
+}
+
+.checkmark::after {
+    display: none;
+    content: "\00d7";
+    line-height: 19.5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+.completed .checkmark::after {
+    display: block;
+}
+
+li.completed {
+    color: #AAA;
+    text-decoration: line-through;
+}
